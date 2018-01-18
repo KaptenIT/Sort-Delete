@@ -43,11 +43,11 @@ setlocal EnableDelayedExpansion
 for /f "tokens=*" %%i in ('dir /b /a:-d "%source%"') do (
     set ext=%%~xi
     if "!ext!"=="" set ext=FileWithNoExtension
-    echo !extlist! | find "!ext!" > nul
+    	echo !extlist! | find "!ext!" > nul
     if not !ERRORLEVEL! == 0 set extlist=!extlist!!ext!:
 	mkdir %destination%!ext!
-	move %source%*!ext! %destination%!ext!
-	) 
+move %source%*!ext! %destination%!ext!
+) 
 GOTO MENU
 
 :DELETE
