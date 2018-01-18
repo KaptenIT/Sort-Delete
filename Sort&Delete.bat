@@ -46,7 +46,7 @@ for /f "tokens=*" %%i in ('dir /b /a:-d "%source%"') do (
     	echo !extlist! | find "!ext!" > nul
     if not !ERRORLEVEL! == 0 set extlist=!extlist!!ext!:
 	mkdir %destination%!ext!
-move %source%*!ext! %destination%!ext!
+    move %source%*!ext! %destination%!ext!
 ) 
 GOTO MENU
 
